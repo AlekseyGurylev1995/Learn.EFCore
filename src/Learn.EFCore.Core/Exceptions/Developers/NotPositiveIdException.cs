@@ -8,10 +8,7 @@ public class NotPositiveIdException<T> : Exception, IDevException
     where T: struct
 {
     private NotPositiveIdException(string message) 
-        : base(message)
-    {
-
-    }
+        : base(message) { }
 
     public static NotPositiveIdException<T> Create() 
     {

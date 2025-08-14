@@ -1,9 +1,11 @@
-﻿namespace Learn.EFCore.Application.UseCases.Commands.CreateAccountByLogin;
+﻿using Learn.EFCore.Core.VObjects;
 
-public class CreateAccountByLoginCommand
+namespace Learn.EFCore.Application.UseCases.Commands.CreateAccountByLogin;
+
+public sealed class CreateAccountByLoginCommand
 {
-    public Parameters.Login Login { get; }
+    public Login Login { get; }
 
-    public Parameters.Password Password { get; }
+    public Password Password { get; }
 }
 

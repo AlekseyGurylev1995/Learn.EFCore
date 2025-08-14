@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn.EFCore.Application", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn.EFCore.Domain", "src\Learn.EFCore.Domain\Learn.EFCore.Domain.csproj", "{BD82AB3E-2EC5-43A3-AA7F-46FF041EBA8D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{8538777D-A4AB-4580-80A6-79258BB7E9BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +46,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1A8CE44B-7C92-4701-AE32-B1EF1DC9BC7D} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
+		{95CA8425-F024-426A-B6A2-68EA214FECC7} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
+		{821E3A30-49F3-4981-AEDF-188E505405B1} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
+		{F2045E42-550C-4BCF-9B93-357BC77BF81D} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
+		{BD82AB3E-2EC5-43A3-AA7F-46FF041EBA8D} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3ABE28A3-F22A-4D1C-B18A-F7E79DEB3263}

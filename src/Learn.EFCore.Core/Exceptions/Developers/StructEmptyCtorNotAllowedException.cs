@@ -8,10 +8,7 @@ public class StructEmptyCtorNotAllowedException<T> : Exception, IDevException
 	where T: struct
 {
 	private StructEmptyCtorNotAllowedException(string message) 
-		: base(message)
-	{
-		
-    }
+		: base(message) { }
 
 	public static StructEmptyCtorNotAllowedException<T> Create() 
 	{

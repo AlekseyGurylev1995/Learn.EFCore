@@ -6,8 +6,6 @@ namespace Learn.EFCore.Core.Exceptions.Users
 {
     public class InvalidPasswordException : Exception, IUserException
     {
-        private const string TITLE = "Не валидный пароль.\n";
-
         private InvalidPasswordException(string message) : base(message) 
         {
 
@@ -15,15 +13,7 @@ namespace Learn.EFCore.Core.Exceptions.Users
 
         public static InvalidPasswordException Create()
         {
-            var msg = TITLE;
-
-            var instance = new InvalidPasswordException(msg);
-            return instance;
-        }
-
-        public static InvalidPasswordException Create(string message) 
-        {
-            var msg = TITLE + message;
+            var msg = "Не валидный пароль";
 
             var instance = new InvalidPasswordException(msg);
             return instance;

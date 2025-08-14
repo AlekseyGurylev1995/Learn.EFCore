@@ -3,35 +3,35 @@
 using Learn.EFCore.Core.Exceptions.Developers;
 using Learn.EFCore.Core.Exceptions.Users;
 
-namespace Learn.EFCore.Application.UseCases.Commands.CreateAccountByLogin.Parameters;
+namespace Learn.EFCore.Core.VObjects;
 
-public readonly struct Login : IEquatable<Login>
+public readonly struct Password : IEquatable<Password>
 {
     public string Value { get; }
 
-    public Login() 
+    public Password() 
     {
-        throw StructEmptyCtorNotAllowedException<Login>.Create();
+        throw StructEmptyCtorNotAllowedException<Password>.Create();
     }
 
-    private Login(string login) 
+    private Password(string password) 
     {
-        Value = login;
+        Value = password;
     }
 
-    public static Login Create(string login) 
+    public static Password Create(string password) 
     {
-        Validate(login);
+        Validate(password);
 
-        var instance = new Login(login);
+        var instance = new Password(password);
         return instance;
     }
 
-    private static void Validate(string login) 
+    private static void Validate(string password)
     {
-        if (string.IsNullOrWhiteSpace(login)) 
+        if (string.IsNullOrWhiteSpace(password))
         {
-            throw InvalidLoginException.Create();
+            throw InvalidPasswordException.Create();
         }
 
         // сюда можно вписать маску,
@@ -40,14 +40,14 @@ public readonly struct Login : IEquatable<Login>
         // и всё это брать из глобальных настроек
     }
 
-    public bool Equals(Login other) 
+    public bool Equals(Password other)
     {
         return other.Value == Value;
     }
 
     public override bool Equals(object obj)
     {
-        return obj is Login other
+        return obj is Password other
             && Equals(other);
     }
 
@@ -56,4 +56,3 @@ public readonly struct Login : IEquatable<Login>
         return Value.GetHashCode();
     }
 }
-

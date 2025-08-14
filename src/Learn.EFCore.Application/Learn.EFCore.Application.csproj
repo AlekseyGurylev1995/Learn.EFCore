@@ -8,6 +8,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Learn.EFCore.Core\Learn.EFCore.Core.csproj" />
+    <ProjectReference Include="..\Learn.EFCore.Domain\Learn.EFCore.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UseCases\Commands\CreateAccountByLogin\Parameters\" />
   </ItemGroup>
 
 </Project>
