@@ -1,6 +1,4 @@
-﻿using Learn.EFCore.Core.Exceptions;
-
-namespace Learn.EFCore.Console;
+﻿namespace Learn.EFCore.Console;
 
 internal class Program
 {

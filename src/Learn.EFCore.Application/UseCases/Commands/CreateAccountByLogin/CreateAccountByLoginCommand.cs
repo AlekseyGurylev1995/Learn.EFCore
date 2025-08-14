@@ -2,8 +2,8 @@
 
 public class CreateAccountByLoginCommand
 {
-    public string Login { get; }
+    public Parameters.Login Login { get; }
 
-    public string Password { get; }
+    public Parameters.Password Password { get; }
 }
 
