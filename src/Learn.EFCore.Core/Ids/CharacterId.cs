@@ -1,6 +1,6 @@
 ﻿using System;
 
-using Learn.EFCore.Core.Exceptions;
+using Learn.EFCore.Core.Exceptions.Developers;
 using Learn.EFCore.Core.Extensions;
 
 namespace Learn.EFCore.Core.Ids;

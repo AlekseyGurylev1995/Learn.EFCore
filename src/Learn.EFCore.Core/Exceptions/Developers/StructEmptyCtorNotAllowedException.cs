@@ -1,8 +1,10 @@
 ﻿using System;
 
-namespace Learn.EFCore.Core.Exceptions;
+using Learn.EFCore.Core.Abstractions;
 
-public class StructEmptyCtorNotAllowedException<T> : Exception
+namespace Learn.EFCore.Core.Exceptions.Developers;
+
+public class StructEmptyCtorNotAllowedException<T> : Exception, IDevException
 	where T: struct
 {
 	private StructEmptyCtorNotAllowedException(string message) 
