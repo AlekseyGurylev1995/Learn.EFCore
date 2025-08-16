@@ -3,7 +3,7 @@
 using Learn.EFCore.Core.VObjects.Ids;
 using Learn.EFCore.Domain.Entities;
 
-namespace Learn.EFCore.Application.Abstractions;
+namespace Learn.EFCore.Application.Abstractions.Repositories;
 
 public interface ISessionRepository
 {

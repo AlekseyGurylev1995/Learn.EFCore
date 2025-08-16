@@ -50,8 +50,8 @@ namespace Learn.EFCore.Core.VObjects
 
         public override bool Equals(object obj)
         {
-            return obj is CharacterName other
-                && Equals(other);
+            return obj is CharacterName other &&
+                Equals(other);
         }
 
         public override int GetHashCode()

@@ -14,15 +14,16 @@ public sealed class Account : Entity<AccountId>
 
     private readonly HashSet<CharacterId> _characterIds;
 
-    public Account(AccountId id) : base(id)
+    public Account(AccountId id, AccountState state) 
+        : base(id)
     {
-        State = AccountState.Unconfirmed;
+        State = state;
         _characterIds = new HashSet<CharacterId>();
     }
 
-    public static Account Create(AccountId id) 
+    public static Account Create(AccountId id, AccountState state) 
     {
-        var instance = new Account(id);
+        var instance = new Account(id, state);
         return instance;
     }
 

@@ -1,31 +1,47 @@
 ﻿using System.Threading.Tasks;
 
 using Learn.EFCore.Application.Abstractions;
+using Learn.EFCore.Application.Abstractions.Repositories;
+using Learn.EFCore.Core.Abstractions;
+using Learn.EFCore.Core.Enums;
+using Learn.EFCore.Core.VObjects;
 
 namespace Learn.EFCore.Application.UseCases.Player.Commands.CreateAccountByLogin
 {
     internal sealed class CreateAccountByLoginHandler : ICommandHandler<CreateAccountByLoginCommand>
     {
+        private readonly IAuthDataByLoginRepository _authDataByLoginRepository;
         private readonly IAccountRepository _accountRepository;
+        private readonly IPasswordHasher _passwordHasher;
 
-        public CreateAccountByLoginHandler(IAccountRepository accountRepository)
+        public CreateAccountByLoginHandler(
+            IAuthDataByLoginRepository authDataByLoginRepository,
+            IAccountRepository accountRepository,
+            IPasswordHasher passwordHasher)
         {
+            _authDataByLoginRepository = authDataByLoginRepository;
             _accountRepository = accountRepository;
+            _passwordHasher = passwordHasher;
         }
 
         public async Task HandleAsync(CreateAccountByLoginCommand command)
         {
-            await _accountRepository.CreateByLoginAsync(
+            // тип алгоритма хэширования брать из глобальных настроек
+            var passwordHash = _passwordHasher.Hash(
+                command.Password,
+                PasswordHash.HashAlgorithmType.Simple);
+
+            // здесь нужно открыть бизнес транзакцию
+
+            var accountId = await _accountRepository.CreateAsync(AccountState.Unconfirmed);
+
+            _authDataByLoginRepository.CreateAsync(
                 command.Login,
-                command.Password);
+                accountId,
+                passwordHash);
 
-            // если ошибка, на уровне имплиментации репозитория выкидываем ошибку
-            // далее просто пойдёт на уровень API, там зафиксируется для текущего запроса
-
-            // что завтра требуется
-            //  решить пару задачек по SQL
-            //  составить архитектуру таблиц + SQL скрипты для реализации
-            //  всё это оформить визуально, расставить связи 1к1 1кМ
+            // здесь нужно закоммитить транзакцию,
+            // если внутри блока транзакции что-то произошло то откатить транзакцию
         }
     }
 }

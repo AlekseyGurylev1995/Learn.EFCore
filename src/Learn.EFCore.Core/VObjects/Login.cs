@@ -47,8 +47,8 @@ public readonly struct Login : IEquatable<Login>
 
     public override bool Equals(object obj)
     {
-        return obj is Login other
-            && Equals(other);
+        return obj is Login other &&
+            Equals(other);
     }
 
     public override int GetHashCode()
