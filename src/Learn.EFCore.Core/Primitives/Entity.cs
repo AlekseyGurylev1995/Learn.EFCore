@@ -11,7 +11,8 @@ public abstract class Entity<T>
     }
 
     /// <summary>
-    ///     Переопределяем, для того сравнивать класс как значимый тип,
+    ///     Переопределяем, для того сравнивать класс как значимый тип
+    ///         в нашем случае, привязка на св-во T
     ///     поскольку:
     ///         один экз. всегда живёт в Domain слое
     ///         остальные могут создаватся в слое Infrastructure
@@ -31,12 +32,6 @@ public abstract class Entity<T>
         return Id.Equals(other.Id);
     }
 
-    /// <summary>
-    ///     Переопределяем, для того сравнивать класс как значимый тип,
-    ///     поскольку:
-    ///         один экз. всегда живёт в Domain слое
-    ///         остальные могут создаватся в слое Infrastructure
-    /// </summary>
     public override int GetHashCode()
     {
         return Id.GetHashCode();

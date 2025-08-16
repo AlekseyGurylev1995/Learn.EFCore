@@ -1,7 +1,7 @@
 ﻿using System;
 
 using Learn.EFCore.Core.Enums;
-using Learn.EFCore.Core.Ids;
+using Learn.EFCore.Core.VObjects.Ids;
 using Learn.EFCore.Core.Primitives;
 
 namespace Learn.EFCore.Domain.Entities

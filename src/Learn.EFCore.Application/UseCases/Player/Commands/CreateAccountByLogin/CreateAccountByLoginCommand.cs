@@ -1,6 +1,6 @@
 ﻿using Learn.EFCore.Core.VObjects;
 
-namespace Learn.EFCore.Application.UseCases.Commands.CreateAccountByLogin;
+namespace Learn.EFCore.Application.UseCases.Player.Commands.CreateAccountByLogin;
 
 public sealed class CreateAccountByLoginCommand
 {

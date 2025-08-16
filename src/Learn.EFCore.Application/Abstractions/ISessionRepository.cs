@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-using Learn.EFCore.Core.Ids;
+using Learn.EFCore.Core.VObjects.Ids;
 using Learn.EFCore.Domain.Entities;
 
 namespace Learn.EFCore.Application.Abstractions;

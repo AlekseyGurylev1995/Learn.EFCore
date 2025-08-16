@@ -1,25 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Learn.EFCore.Core.Ids;
+﻿using Learn.EFCore.Core.VObjects.Ids;
 using Learn.EFCore.Core.Primitives;
+using Learn.EFCore.Core.VObjects;
 
 namespace Learn.EFCore.Domain.Entities
 {
     public sealed class Character : Entity<CharacterId>
     {
-        private Character(CharacterId id) : base(id) 
-        {
+        public CharacterName Name { get; private set; }
+        public bool IsOnline { get; private set; }
 
+        private Character(CharacterId id, CharacterName name) 
+            : base(id) 
+        {
+            Name = name;
+            IsOnline = false;
         }
 
-        public static Character Create(CharacterId id) 
+        public static Character Create(CharacterId id, CharacterName name) 
         {
-            var instance = new Character(id);
+            var instance = new Character(id, name);
             return instance;
+        }
+
+        public void MarkAsOnline() 
+        {
+            IsOnline = true;
+        }
+
+        public void MarkAsOffline() 
+        {
+            IsOnline = false;
+        }
+
+        public void ChangeName(CharacterName newName) 
+        {
+            Name = newName;
         }
     }
 }

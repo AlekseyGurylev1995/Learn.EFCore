@@ -2,7 +2,7 @@
 
 using Learn.EFCore.Core.Exceptions.Developers;
 
-namespace Learn.EFCore.Core.Ids
+namespace Learn.EFCore.Core.VObjects.Ids
 {
     public readonly struct SessionId : IEquatable<SessionId>
     {

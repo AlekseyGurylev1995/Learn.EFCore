@@ -12,7 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UseCases\Commands\CreateAccountByLogin\Parameters\" />
+    <Folder Include="UseCases\Admin\Commands\" />
+    <Folder Include="UseCases\Player\Commands\CreateAccountByLogin\Parameters\" />
+    <Folder Include="UseCases\Admin\Commands\TransferCharacterBetweenAccounts\" />
   </ItemGroup>
 
 </Project>

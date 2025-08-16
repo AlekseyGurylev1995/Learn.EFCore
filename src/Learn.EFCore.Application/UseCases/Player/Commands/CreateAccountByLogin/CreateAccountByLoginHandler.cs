@@ -2,7 +2,7 @@
 
 using Learn.EFCore.Application.Abstractions;
 
-namespace Learn.EFCore.Application.UseCases.Commands.CreateAccountByLogin
+namespace Learn.EFCore.Application.UseCases.Player.Commands.CreateAccountByLogin
 {
     internal sealed class CreateAccountByLoginHandler : ICommandHandler<CreateAccountByLoginCommand>
     {

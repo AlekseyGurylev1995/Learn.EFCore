@@ -3,7 +3,7 @@
 using Learn.EFCore.Core.Exceptions.Developers;
 using Learn.EFCore.Core.Extensions;
 
-namespace Learn.EFCore.Core.Ids;
+namespace Learn.EFCore.Core.VObjects.Ids;
 
 public readonly struct AccountId : IEquatable<AccountId>
 {
